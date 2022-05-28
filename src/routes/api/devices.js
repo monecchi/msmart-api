@@ -8,12 +8,12 @@ import Redis from 'ioredis'
 import config from '../../config.js'
 const router = express.Router()
 const redis = new Redis({
-    port: `${process.env.REDIS_PORT}`, // Redis port
-    host: `${process.env.REDIS_HOST}`, // Redis host
-    username: 'default', // needs Redis >= 6
-    password: `${process.env.REDIS_PASS}`, // string
-    db: 0 // Defaults to 0
-  })
+  port: `${process.env.REDIS_PORT}`, // Redis port
+  host: `${process.env.REDIS_HOST}`, // Redis host
+  username: 'default', // needs Redis >= 6
+  password: `${process.env.REDIS_PASS}`, // string
+  db: 0 // Defaults to 0
+})
 const { baseUrl, clientId, clientSecret, deviceId } = config
 
 //
