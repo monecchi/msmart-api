@@ -7,8 +7,9 @@ import Redis from 'ioredis'
 
 import config from '../../config.js'
 const router = express.Router()
-const redis = new Redis()
 const { baseUrl, clientId, clientSecret, deviceId } = config
+
+
 
 //
 // Devices API Routes

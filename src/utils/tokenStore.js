@@ -14,7 +14,7 @@ dotenv.config()
 // new Redis(6388, '104.207.147.229'); // 104.207.147.229:6388
 // new Redis('/etc/easypanel/projects/msmart-tuya-api/redis/redis/data)
 
-const redisPass = `${process.env.REDIS_PASS}` // 'M@smart$Redis#3065' // encodeURIComponent('M@smart$Redis#3065')
+const redisPass = process.env.REDIS_PASS // 'M@smart$Redis#3065' // encodeURIComponent('M@smart$Redis#3065')
 
 // new Redis({
 //   port: 6388, // Redis port
@@ -24,13 +24,16 @@ const redisPass = `${process.env.REDIS_PASS}` // 'M@smart$Redis#3065' // encodeU
 //   db: 0, // Defaults to 0
 // });
 
+// const redisUrl = `redis://default:${redisPass}@${process.env.REDIS_HOST}:${process.env.REDIS_PORT}/0`
+// client = new Redis(redisUrl)
+
 export class RedisTokenStore {
   client = new Redis({
-    port: `${process.env.REDIS_PORT}`, // Redis port
-    host: `${process.env.REDIS_HOST}`, // Redis host
-    username: 'default', // needs Redis >= 6
-    password: redisPass, // string
-    db: 0 // Defaults to 0
+    port: `${process.env.REDIS_PORT}`,
+    host: `${process.env.REDIS_HOST}`,
+    username: 'default',
+    password: redisPass,
+    db: 0
   })
 
   constructor (client, key = 'tuya::token') {
