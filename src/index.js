@@ -20,10 +20,7 @@ app.use(
     origin: [
       'https://openapi.tuyaeu.com',
       'https://openapi.tuyaus.com',
-      'https://msmart.meurancho.pizza',
-      'http://192.168.15.4:3000',
-      'http://localhost:3000',
-      'http://localhost:3399'
+      'https://msmart.meurancho.pizza'
     ],
     methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], // 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: [
@@ -48,8 +45,7 @@ app.use(routes)
 
 app.listen(port, hostname, () => {
   const protocol = (process.env.NODE_ENV !== 'development') ? 'https' : 'http'
-  const url = (process.env.NODE_ENV !== 'development') ? `${protocol}://${hostname}:${port}` : `${protocol}://${hostname}:${port}`
   console.log(
-    `tuyaApi Started ✓ - server running at ${url}`
+    `tuyaApi Started ✓ - server running at ${protocol}://${hostname}:${port}`
   )
 })
