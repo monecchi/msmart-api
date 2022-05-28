@@ -1,25 +1,17 @@
 import express from 'express'
 import axios from 'axios'
+import Redis from 'ioredis'
 
 import { TuyaContext } from '@tuya/tuya-connector-nodejs'
 import { RedisTokenStore } from '../../utils/tokenStore.js'
-import Redis from 'ioredis'
+import { redisConnect } from '../../utils/redisConnect.js'
 
 import config from '../../config.js'
-const router = express.Router()
-<<<<<<< HEAD
-=======
-const redis = new Redis({
-  port: `${process.env.REDIS_PORT}`, // Redis port
-  host: `${process.env.REDIS_HOST}`, // Redis host
-  username: 'default', // needs Redis >= 6
-  password: `${process.env.REDIS_PASS}`, // string
-  db: 0 // Defaults to 0
-})
->>>>>>> 871872f81d70b5044637a0d6511df4ecfa163c73
 const { baseUrl, clientId, clientSecret, deviceId } = config
 
+const router = express.Router()
 
+const redis = new Redis(redisConnect)
 
 //
 // Devices API Routes

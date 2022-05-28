@@ -1,9 +1,11 @@
-import Redis from 'ioredis'
+// Redis (ioRedis) connection
+import dotenv from 'dotenv'
+dotenv.config()
 
-const redis = new Redis({
+export const redisConnect = {
   port: `${process.env.REDIS_PORT}`,
   host: `${process.env.REDIS_HOST}`,
   username: 'default',
-  password: redisPass,
+  password: `${process.env.REDIS_PASS}`,
   db: 0
-})
+}
