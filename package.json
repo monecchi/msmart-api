@@ -11,7 +11,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "yarn lint && nodemon -w src --exec babel-node src --presets @babel/env",
-    "build": "rm -rf dist && yarn lint && ./node_modules/.bin/babel . --out-dir dist --ignore node_modules --presets @babel/env && cp .env dist",
+    "build": "rm -rf dist && yarn lint && ./node_modules/.bin/babel . --out-dir dist --ignore node_modules --presets @babel/env",
     "start": "cross-env NODE_ENV=production && node dist/src/index.js",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
@@ -35,6 +35,7 @@
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-typescript": "^7.17.12",
     "@babel/register": "^7.17.7",
+    "@types/node": "^17.0.36",
     "@types/qs": "^6.9.7",
     "cross-env": "^7.0.3",
     "eslint": "^8.16.0",
@@ -48,6 +49,6 @@
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "ts-node": "^10.7.0",
-    "typescript": "next"
+    "typescript": "^4.7.2"
   }
 }
