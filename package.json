@@ -1,0 +1,53 @@
+{
+  "name": "msmart-tuya-api-server",
+  "version": "1.0.0",
+  "description": "mSmart Api connects to smart devices over the cloud, such as Tuya IoT Cloud Platform and others.",
+  "main": "dist/index.js",
+  "packageManager": "yarn@3.2.0",
+  "moduleResolution": "Node",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "yarn lint && nodemon -w src --exec babel-node src --presets @babel/env",
+    "build": "rm -rf dist && yarn lint && ./node_modules/.bin/babel . --out-dir dist --ignore node_modules --presets @babel/env && cp .env dist",
+    "start": "cross-env NODE_ENV=production && node dist/src/index.js",
+    "format:check": "prettier --check .",
+    "format:write": "prettier --write .",
+    "lint": "./node_modules/.bin/eslint 'src/index.js' 'src/**/*.js' ",
+    "lint:check": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "dependencies": {
+    "@tuya/tuya-connector-nodejs": "^2.1.2",
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "ioredis": "^5.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.18.0",
+    "@babel/eslint-parser": "^7.18.2",
+    "@babel/node": "^7.17.10",
+    "@babel/preset-env": "^7.18.0",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/register": "^7.17.7",
+    "@types/qs": "^6.9.7",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.16.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "latest",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "nodemon": "^2.0.16",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "next"
+  }
+}
