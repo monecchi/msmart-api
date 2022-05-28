@@ -32,7 +32,7 @@ router.post('/:id/commands', async (req, res) => {
       baseUrl: 'https://openapi.tuyaus.com',
       accessKey: clientId,
       secretKey: clientSecret,
-      store: new RedisTokenStore(redis),
+      // store: new RedisTokenStore(redis),
       rpc: axios
     })
 
@@ -68,7 +68,7 @@ router.put('/:id/update', async (req, res) => {
       baseUrl: 'https://openapi.tuyaus.com',
       accessKey: clientId,
       secretKey: clientSecret,
-      store: new RedisTokenStore(redis),
+      // store: new RedisTokenStore(redis),
       rpc: axios
     })
 
