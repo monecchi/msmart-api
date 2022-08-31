@@ -1,7 +1,7 @@
 {
   "name": "msmart-tuya-api-server",
   "version": "1.0.0",
-  "description": "mSmart Api connects to smart devices over the cloud, such as Tuya IoT Cloud Platform and others.",
+  "description": "mSmart Api connects to smart devices over the cloud, mainly through Tuya IoT Cloud Platform & others.",
   "main": "dist/index.js",
   "packageManager": "yarn@3.2.0",
   "moduleResolution": "Node",
@@ -35,6 +35,8 @@
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-typescript": "^7.17.12",
     "@babel/register": "^7.17.7",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
     "@types/node": "^17.0.36",
     "@types/qs": "^6.9.7",
     "cross-env": "^7.0.3",

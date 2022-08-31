@@ -1,9 +1,6 @@
 import express from 'express'
 import { apiRoutes } from './api/index.js'
 
-// import config from '../config.js'
-// const { apiUrl, apiPath } = config
-
 const router = express.Router()
 
 const api = '/api/v1'

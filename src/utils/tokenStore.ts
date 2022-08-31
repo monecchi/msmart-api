@@ -7,15 +7,15 @@ import {
   TuyaTokensSave,
 } from '@tuya/tuya-connector-nodejs';
 import Redis from 'ioredis';
-//import IORedis from 'ioredis';
+// import IORedis from 'ioredis';
 
 // Ways to connect to Redis (remotely or locally)
-//new Redis(); // Connect to 127.0.0.1:6379
-//new Redis(6388); // 127.0.0.1:6388
-//new Redis(6388, '104.207.147.229'); // 104.207.147.229:6388
-//new Redis('/etc/easypanel/projects/msmart-tuya-api/redis/redis/data);
+// new Redis(); // Connect to 127.0.0.1:6379
+// new Redis(6388); // 127.0.0.1:6388
+// new Redis(6388, '104.207.147.229'); // 104.207.147.229:6388
+// new Redis('/etc/easypanel/projects/msmart-tuya-api/redis/redis/data);
 
-const redisPass: string = 'M@smart$Redis#3065'; //encodeURIComponent('M@smart$Redis#3065');
+const redisPass: string = 'Mr_smart.Redis#1441'; // encodeURIComponent('Mr_smart.Redis#1441');
 
 // new Redis({
 //   port: 6388, // Redis port

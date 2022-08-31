@@ -7,7 +7,7 @@ import { RedisTokenStore } from '../../utils/tokenStore.js'
 import { redisConnect } from '../../utils/redisConnect.js'
 
 import config from '../../config.js'
-const { baseUrl, clientId, clientSecret, deviceId } = config
+const { baseUrl, clientId, clientSecret, deviceId, uid } = config
 
 const router = express.Router()
 
@@ -91,7 +91,7 @@ router.put('/:id/update', async (req, res) => {
 })
 
 //
-// Get device details, no request params
+// Get all devices under a user's account by user ID
 //
 router.get('/', async (req, res) => {
   try {
@@ -105,7 +105,7 @@ router.get('/', async (req, res) => {
 
     const response = await tuya.request({
       method: 'GET',
-      path: `/v1.0/devices/${deviceId}`
+      path: `/v1.0/users/${uid}/devices` // {{url}}/v1.0/users/{{uid}}/devices
       // body: {},
     })
 

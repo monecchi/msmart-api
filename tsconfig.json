@@ -21,6 +21,9 @@
   "ts-node": {
     "esm": true
   },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn"
+  },
   "include": ["src/**/*", "**/*.js", "**/*.mjs", "**/*.ts"],
   "exclude": ["dist", "build", "node_modules"]
 }

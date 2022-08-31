@@ -7,7 +7,7 @@ import { routes } from './routes/index.js'
 
 dotenv.config()
 const hostname = process.env.NODE_ENV !== 'development' ? process.env.HOSTNAME : 'localhost'
-const port = process.env.NODE_ENV !== 'development' ? process.env.PORT : 5000 // process.env.PORT || 5000
+const port = process.env.NODE_ENV !== 'development' ? process.env.PORT : 5000
 
 const app = express()
 
@@ -22,7 +22,7 @@ app.use(
       'https://openapi.tuyaus.com',
       'https://msmart.meurancho.pizza'
     ],
-    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'], // 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
     allowedHeaders: [
       'Accept',
       'Authorization',
